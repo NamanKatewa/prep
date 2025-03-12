@@ -1,0 +1,45 @@
+{
+  "id": "unique identifier",
+  "name": "Label for name",
+  "dimensions": { "width": 500, "height": 500 },
+  "meta": {
+    "createdBy": "Naman",
+    "createdAt": "2025-03-12",
+    "description": "Ground Floor plan for KRMU Aryabhatta Block"
+  },
+  "nodes": [
+    {
+      "id": "A",
+      "x": 50,
+      "y": 50,
+      "type": "room",
+      "label": "Room A",
+      "hazard": false
+    },
+    {
+      "id": "B",
+      "x": 200,
+      "y": 50,
+      "type": "hallway",
+      "label": "Hallway",
+      "hazard": false
+    },
+    {
+      "id": "Exit",
+      "x": 350,
+      "y": 50,
+      "type": "exit",
+      "label": "Main Exit",
+      "hazard": false
+    }
+  ],
+  "edges": [
+    { "from": "A", "to": "B", "weight": 1, "status": "open" },
+    { "from": "B", "to": "Exit", "weight": 1, "status": "open" }
+  ],
+  "settings": {
+    "showGrid": true,
+    "snapToGrid": true,
+    "pathAlgorithm": "A"
+  }
+}
