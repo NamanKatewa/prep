@@ -1,45 +1,81 @@
 {
-  "id": "unique identifier",
-  "name": "Label for name",
-  "dimensions": { "width": 500, "height": 500 },
+  "id": "plan002",
+  "name": "First Floor - Office Layout",
+  "dimensions": { "width": 600, "height": 400 },
   "meta": {
     "createdBy": "Naman",
     "createdAt": "2025-03-12",
-    "description": "Ground Floor plan for KRMU Aryabhatta Block"
+    "description": "Office Floor Plan with Multiple Exits"
   },
   "nodes": [
     {
-      "id": "A",
+      "id": "Entrance",
       "x": 50,
-      "y": 50,
+      "y": 200,
+      "type": "entrance",
+      "label": "Main Entrance",
+      "hazard": false
+    },
+    {
+      "id": "Room1",
+      "x": 150,
+      "y": 100,
       "type": "room",
-      "label": "Room A",
+      "label": "Conference Room",
       "hazard": false
     },
     {
-      "id": "B",
-      "x": 200,
-      "y": 50,
+      "id": "Room2",
+      "x": 150,
+      "y": 300,
+      "type": "room",
+      "label": "Break Room",
+      "hazard": false
+    },
+    {
+      "id": "Hallway1",
+      "x": 300,
+      "y": 100,
       "type": "hallway",
-      "label": "Hallway",
+      "label": "Hallway A",
       "hazard": false
     },
     {
-      "id": "Exit",
-      "x": 350,
-      "y": 50,
-      "type": "exit",
-      "label": "Main Exit",
+      "id": "Hallway2",
+      "x": 300,
+      "y": 300,
+      "type": "hallway",
+      "label": "Hallway B",
       "hazard": false
+    },
+    {
+      "id": "Exit1",
+      "x": 500,
+      "y": 100,
+      "type": "exit",
+      "label": "Emergency Exit A",
+      "hazard": false
+    },
+    {
+      "id": "Exit2",
+      "x": 500,
+      "y": 300,
+      "type": "exit",
+      "label": "Emergency Exit B",
+      "hazard": true
     }
   ],
   "edges": [
-    { "from": "A", "to": "B", "weight": 1, "status": "open" },
-    { "from": "B", "to": "Exit", "weight": 1, "status": "open" }
+    { "from": "Entrance", "to": "Room1", "weight": 1, "status": "open" },
+    { "from": "Entrance", "to": "Room2", "weight": 1, "status": "open" },
+    { "from": "Room1", "to": "Hallway1", "weight": 1, "status": "open" },
+    { "from": "Room2", "to": "Hallway2", "weight": 1, "status": "open" },
+    { "from": "Hallway1", "to": "Exit1", "weight": 1, "status": "open" },
+    { "from": "Hallway2", "to": "Exit2", "weight": 1, "status": "blocked" }
   ],
   "settings": {
     "showGrid": true,
     "snapToGrid": true,
-    "pathAlgorithm": "A"
+    "pathAlgorithm": "A*"
   }
 }
