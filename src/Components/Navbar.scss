@@ -1,0 +1,36 @@
+@use "../variables";
+
+.navbar {
+    background-color: variables.$background-color-1;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button {
+        cursor: pointer;
+        border: none;
+        border-bottom: 1px solid variables.$accent-color;
+        padding-bottom: 1px;
+        background-color: transparent;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 0;
+            background-color: variables.$accent-color;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
