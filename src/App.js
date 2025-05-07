@@ -2,8 +2,10 @@ import "./App.scss";
 import { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
 import Navbar from "./Components/Navbar";
+import Toolbar from "./Components/Toolbar";
 
 function App() {
+  const [path, setPath] = useState([]);
   const [plan, setPlan] = useState(null);
   const [width, setWidth] = useState(500);
   const [height, setHeight] = useState(500);
@@ -15,6 +17,7 @@ function App() {
     type: "room",
     hazard: false,
   });
+  const [startNodeId, setStartNodeId] = useState(null);
 
   const svgRef = useRef();
 
@@ -51,8 +54,10 @@ function App() {
   const handleDragging = (event, nodeId) => {
     if (toolMode !== "select") return;
 
-    const newX = event.x;
-    const newY = event.y;
+    const gridSpacing = 50;
+
+    const newX = Math.round(event.x / gridSpacing) * gridSpacing;
+    const newY = Math.round(event.y / gridSpacing) * gridSpacing;
 
     setPlan((prevPlan) => ({
       ...prevPlan,
@@ -65,12 +70,15 @@ function App() {
   const handleDragEnd = (event, nodeId) => {
     if (toolMode !== "select") return;
   };
-
   useEffect(() => {
     if (!plan) return;
 
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
+
+    const gridSpacing = 50;
+    const numColumns = Math.floor(plan.dimensions.width / gridSpacing);
+    const numRows = Math.floor(plan.dimensions.height / gridSpacing);
 
     svg
       .append("rect")
@@ -79,33 +87,37 @@ function App() {
       .attr("fill", "#f0f0f0")
       .on("click", handleSvgClick);
 
-    if (plan.settings.showGrid) {
-      const gridSize = 50;
-      for (let x = 0; x <= plan.dimensions.width; x += gridSize) {
-        svg
-          .append("line")
-          .attr("x1", x)
-          .attr("y1", 0)
-          .attr("x2", x)
-          .attr("y2", plan.dimensions.height)
-          .attr("stroke", "#ccc");
-      }
-      for (let y = 0; y <= plan.dimensions.height; y += gridSize) {
-        svg
-          .append("line")
-          .attr("x1", 0)
-          .attr("y1", y)
-          .attr("x2", plan.dimensions.width)
-          .attr("y2", y)
-          .attr("stroke", "#ccc");
-      }
+    for (let i = 0; i <= numRows; i++) {
+      svg
+        .append("line")
+        .attr("x1", 0)
+        .attr("y1", i * gridSpacing)
+        .attr("x2", plan.dimensions.width)
+        .attr("y2", i * gridSpacing)
+        .attr("stroke", "#ddd")
+        .attr("stroke-width", 1);
     }
 
-    plan.edges.forEach((edge, index) => {
+    for (let i = 0; i <= numColumns; i++) {
+      svg
+        .append("line")
+        .attr("x1", i * gridSpacing)
+        .attr("y1", 0)
+        .attr("x2", i * gridSpacing)
+        .attr("y2", plan.dimensions.height)
+        .attr("stroke", "#ddd")
+        .attr("stroke-width", 1);
+    }
+
+    const pathGroup = svg.append("g").attr("class", "paths");
+    const edgeGroup = svg.append("g").attr("class", "edges");
+    const nodeGroup = svg.append("g").attr("class", "nodes");
+
+    plan.edges.forEach((edge) => {
       const fromNode = plan.nodes.find((n) => n.id === edge.from);
       const toNode = plan.nodes.find((n) => n.id === edge.to);
 
-      svg
+      edgeGroup
         .append("line")
         .attr("x1", fromNode.x)
         .attr("y1", fromNode.y)
@@ -117,6 +129,25 @@ function App() {
         .on("click", (event) => handleEdgeClick(event, edge));
     });
 
+    if (path.length > 1) {
+      for (let i = 0; i < path.length - 1; i++) {
+        const fromNode = plan.nodes[path[i]];
+        const toNode = plan.nodes[path[i + 1]];
+
+        if (!fromNode || !toNode) continue;
+
+        pathGroup
+          .append("line")
+          .attr("x1", fromNode.x)
+          .attr("y1", fromNode.y)
+          .attr("x2", toNode.x)
+          .attr("y2", toNode.y)
+          .attr("stroke", "orange")
+          .attr("stroke-width", 4)
+          .attr("stroke-dasharray", "6 4");
+      }
+    }
+
     const colorMap = {
       room: "steelblue",
       hallway: "gray",
@@ -124,12 +155,18 @@ function App() {
     };
 
     plan.nodes.forEach((node) => {
-      svg
+      nodeGroup
         .append("circle")
         .attr("cx", node.x)
         .attr("cy", node.y)
         .attr("r", 8)
-        .attr("fill", node.hazard ? "red" : colorMap[node.type])
+        .attr("fill", () =>
+          node.id === startNodeId
+            ? "orange" // starting node
+            : node.hazard
+            ? "red"
+            : colorMap[node.type]
+        )
         .attr("cursor", toolMode === "select" ? "move" : "pointer")
         .call(
           d3
@@ -140,14 +177,14 @@ function App() {
         )
         .on("click", (event) => handleNodeClick(event, node.id));
 
-      svg
+      nodeGroup
         .append("text")
         .attr("x", node.x + 10)
         .attr("y", node.y - 10)
         .attr("font-size", "10px")
         .text(node.label);
     });
-  }, [plan, toolMode, selectedNodes]);
+  }, [plan, toolMode, selectedNodes, path]);
 
   const handleSvgClick = (event) => {
     if (toolMode !== "add-node") return;
@@ -227,20 +264,17 @@ function App() {
         setHeight={setHeight}
       />
 
-      <div className="toolbar">
-        <div className="toolbar">
-          <button onClick={() => setToolMode("add-node")}>Add Node</button>
-          <button onClick={() => setToolMode("add-edge")}>Add Edge</button>
-          <button onClick={() => setToolMode("delete")}>Delete Node</button>
-          <button onClick={() => setToolMode("delete-edge")}>
-            Delete Edge
-          </button>{" "}
-          <button onClick={() => setToolMode("select")}>Select/Edit</button>
-        </div>
-      </div>
+      <Toolbar
+        setToolMode={setToolMode}
+        plan={plan}
+        editingNode={editingNode}
+        setStartNodeId={setStartNodeId}
+        startNodeId={startNodeId}
+        setPath={setPath}
+      />
 
-      {plan ? (
-        <>
+      {plan && (
+        <div className="plan">
           <svg
             ref={svgRef}
             width={plan.dimensions.width}
@@ -287,9 +321,7 @@ function App() {
               <button onClick={() => setEditingNode(null)}>Cancel</button>
             </div>
           )}
-        </>
-      ) : (
-        "Loading..."
+        </div>
       )}
     </div>
   );

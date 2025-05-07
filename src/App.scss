@@ -1,0 +1,11 @@
+@use "./variables.scss";
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .plan {
+        padding: 40px;
+    }
+}

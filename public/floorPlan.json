@@ -1,81 +1,500 @@
 {
-  "id": "plan002",
-  "name": "First Floor - Office Layout",
-  "dimensions": { "width": 600, "height": 400 },
+  "id": "383334ea-71f1-4bc1-8f6d-f26f305512e5",
+  "name": "New Plan",
+  "dimensions": {
+    "width": 1000,
+    "height": 500
+  },
   "meta": {
-    "createdBy": "Naman",
-    "createdAt": "2025-03-12",
-    "description": "Office Floor Plan with Multiple Exits"
+    "createdBy": "User",
+    "createdAt": "2025-04-30T06:49:20.928Z",
+    "description": ""
   },
   "nodes": [
     {
-      "id": "Entrance",
+      "id": "21834e64-d351-499c-8f0a-34863febdbaf",
+      "x": 900,
+      "y": 100,
+      "type": "room",
+      "label": "Washroom",
+      "hazard": false
+    },
+    {
+      "id": "dcf3e913-3481-483a-994a-9f01b9220276",
+      "x": 900,
+      "y": 200,
+      "type": "exit",
+      "label": "Exit",
+      "hazard": false
+    },
+    {
+      "id": "7debfc70-3e27-44d8-92d3-8c7ababb65ac",
+      "x": 750,
+      "y": 100,
+      "type": "room",
+      "label": "B004",
+      "hazard": false
+    },
+    {
+      "id": "55a9450c-503b-407d-92f1-19615d5fe2c5",
+      "x": 650,
+      "y": 100,
+      "type": "room",
+      "label": "B006",
+      "hazard": false
+    },
+    {
+      "id": "241685b8-827b-4a19-be03-aaa1da38f59a",
+      "x": 400,
+      "y": 200,
+      "type": "room",
+      "label": "B005",
+      "hazard": false
+    },
+    {
+      "id": "3c8cee84-de7d-49b9-9503-d6e2a3d4d6de",
+      "x": 500,
+      "y": 100,
+      "type": "exit",
+      "label": "Exit",
+      "hazard": false
+    },
+    {
+      "id": "c15400da-616f-40ea-ba87-22fb2736087d",
+      "x": 140,
+      "y": 631,
+      "type": "room",
+      "label": "B012",
+      "hazard": false
+    },
+    {
+      "id": "dfe49a32-8ea8-4dea-b8e6-d5dd1302c2a6",
+      "x": 250,
+      "y": 100,
+      "type": "room",
+      "label": "B014",
+      "hazard": false
+    },
+    {
+      "id": "ef35cbd8-b73e-4d21-b064-14d878993eec",
+      "x": 150,
+      "y": 100,
+      "type": "room",
+      "label": "B016",
+      "hazard": false
+    },
+    {
+      "id": "826cd558-ea61-46a2-9e7a-b8b93fb61f74",
+      "x": 100,
+      "y": 100,
+      "type": "room",
+      "label": "B018",
+      "hazard": false
+    },
+    {
+      "id": "3338458f-4a98-4fc6-a96c-0f136a77dc87",
+      "x": 50,
+      "y": 100,
+      "type": "room",
+      "label": "Washroom",
+      "hazard": false
+    },
+    {
+      "id": "a8ba5f00-4d1e-493a-83ec-0f9f665cad8d",
+      "x": 850,
+      "y": 100,
+      "type": "room",
+      "label": "B002",
+      "hazard": false
+    },
+    {
+      "id": "01bf1c39-f59a-45d9-8d6a-b9c6327aac3a",
+      "x": 750,
+      "y": 200,
+      "type": "room",
+      "label": "B001",
+      "hazard": false
+    },
+    {
+      "id": "0f9d71a9-e14e-4aaa-beef-0f2565238d84",
+      "x": 650,
+      "y": 200,
+      "type": "room",
+      "label": "B003",
+      "hazard": false
+    },
+    {
+      "id": "c0b71f85-6b9e-4b70-82d7-ecca3b220db4",
+      "x": 500,
+      "y": 200,
+      "type": "exit",
+      "label": "Exit",
+      "hazard": false
+    },
+    {
+      "id": "ef6c5b33-2472-42d0-8998-04442455832e",
+      "x": 300,
+      "y": 200,
+      "type": "room",
+      "label": "B007",
+      "hazard": false
+    },
+    {
+      "id": "4f435a6b-575c-4852-8c3c-abb7d2b39753",
+      "x": 250,
+      "y": 200,
+      "type": "room",
+      "label": "B009",
+      "hazard": false
+    },
+    {
+      "id": "522e06a3-7993-4662-8550-8af2c93a65fb",
+      "x": 150,
+      "y": 200,
+      "type": "room",
+      "label": "B011",
+      "hazard": false
+    },
+    {
+      "id": "b3875e40-c8d9-4850-a065-1b4e1f460dcd",
+      "x": 100,
+      "y": 200,
+      "type": "room",
+      "label": "B013",
+      "hazard": false
+    },
+    {
+      "id": "2336c719-a6ea-4f54-bc5f-4f707830f1bf",
       "x": 50,
       "y": 200,
-      "type": "entrance",
-      "label": "Main Entrance",
+      "type": "exit",
+      "label": "Exit",
       "hazard": false
     },
     {
-      "id": "Room1",
-      "x": 150,
-      "y": 100,
-      "type": "room",
-      "label": "Conference Room",
-      "hazard": false
-    },
-    {
-      "id": "Room2",
-      "x": 150,
-      "y": 300,
-      "type": "room",
-      "label": "Break Room",
-      "hazard": false
-    },
-    {
-      "id": "Hallway1",
+      "id": "f500bd7f-0ebf-45f5-9bfc-6d043466a240",
       "x": 300,
       "y": 100,
-      "type": "hallway",
-      "label": "Hallway A",
+      "type": "room",
+      "label": "B012",
       "hazard": false
     },
     {
-      "id": "Hallway2",
-      "x": 300,
-      "y": 300,
-      "type": "hallway",
-      "label": "Hallway B",
-      "hazard": false
-    },
-    {
-      "id": "Exit1",
-      "x": 500,
+      "id": "2996e4b1-db83-405d-862e-5e9fc9b79969",
+      "x": 400,
       "y": 100,
-      "type": "exit",
-      "label": "Emergency Exit A",
+      "type": "room",
+      "label": "B010",
       "hazard": false
     },
     {
-      "id": "Exit2",
+      "id": "4cd5eba9-7979-4175-b2d9-a8ec79386155",
+      "x": 50,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "8a557dd0-20ae-4fb6-b4c8-b253167b5484",
+      "x": 900,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "7e444b89-0e89-49c6-bae0-2dafaaead4ee",
+      "x": 100,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "cd0c4619-4f53-443f-806b-d00ff56390f5",
+      "x": 150,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "1b6ae8d4-dc14-4910-ba7b-4cb0a40b8fe5",
+      "x": 250,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "71320d47-4b13-4c03-b1cb-96e48f1ba139",
+      "x": 300,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "db953d44-a3c5-461a-960b-7a3fa4ffce28",
+      "x": 400,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "62d4a398-58c0-45df-a477-af8a59fd928a",
       "x": 500,
-      "y": 300,
-      "type": "exit",
-      "label": "Emergency Exit B",
-      "hazard": true
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "f1234dde-6d27-43ea-9156-7446a9c73042",
+      "x": 650,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "d88ca2dd-17d7-4247-b0c8-25a60a37becd",
+      "x": 750,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "7c614aa4-4491-4766-a93f-980832105101",
+      "x": 850,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
+    },
+    {
+      "id": "cdae2d87-4140-4550-9af1-6e2d9e017e15",
+      "x": 550,
+      "y": 100,
+      "type": "room",
+      "label": "B008",
+      "hazard": false
+    },
+    {
+      "id": "9557b61c-19f5-4bfd-bc8c-879ee2bb3d5a",
+      "x": 550,
+      "y": 150,
+      "type": "hallway",
+      "label": "Corridor",
+      "hazard": false
     }
   ],
   "edges": [
-    { "from": "Entrance", "to": "Room1", "weight": 1, "status": "open" },
-    { "from": "Entrance", "to": "Room2", "weight": 1, "status": "open" },
-    { "from": "Room1", "to": "Hallway1", "weight": 1, "status": "open" },
-    { "from": "Room2", "to": "Hallway2", "weight": 1, "status": "open" },
-    { "from": "Hallway1", "to": "Exit1", "weight": 1, "status": "open" },
-    { "from": "Hallway2", "to": "Exit2", "weight": 1, "status": "blocked" }
+    {
+      "from": "3338458f-4a98-4fc6-a96c-0f136a77dc87",
+      "to": "4cd5eba9-7979-4175-b2d9-a8ec79386155",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "2336c719-a6ea-4f54-bc5f-4f707830f1bf",
+      "to": "4cd5eba9-7979-4175-b2d9-a8ec79386155",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "4cd5eba9-7979-4175-b2d9-a8ec79386155",
+      "to": "7e444b89-0e89-49c6-bae0-2dafaaead4ee",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "cd0c4619-4f53-443f-806b-d00ff56390f5",
+      "to": "7e444b89-0e89-49c6-bae0-2dafaaead4ee",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "cd0c4619-4f53-443f-806b-d00ff56390f5",
+      "to": "1b6ae8d4-dc14-4910-ba7b-4cb0a40b8fe5",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "1b6ae8d4-dc14-4910-ba7b-4cb0a40b8fe5",
+      "to": "71320d47-4b13-4c03-b1cb-96e48f1ba139",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "71320d47-4b13-4c03-b1cb-96e48f1ba139",
+      "to": "db953d44-a3c5-461a-960b-7a3fa4ffce28",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "db953d44-a3c5-461a-960b-7a3fa4ffce28",
+      "to": "62d4a398-58c0-45df-a477-af8a59fd928a",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "f1234dde-6d27-43ea-9156-7446a9c73042",
+      "to": "d88ca2dd-17d7-4247-b0c8-25a60a37becd",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "d88ca2dd-17d7-4247-b0c8-25a60a37becd",
+      "to": "7c614aa4-4491-4766-a93f-980832105101",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "7c614aa4-4491-4766-a93f-980832105101",
+      "to": "8a557dd0-20ae-4fb6-b4c8-b253167b5484",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "8a557dd0-20ae-4fb6-b4c8-b253167b5484",
+      "to": "dcf3e913-3481-483a-994a-9f01b9220276",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "01bf1c39-f59a-45d9-8d6a-b9c6327aac3a",
+      "to": "d88ca2dd-17d7-4247-b0c8-25a60a37becd",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "0f9d71a9-e14e-4aaa-beef-0f2565238d84",
+      "to": "f1234dde-6d27-43ea-9156-7446a9c73042",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "62d4a398-58c0-45df-a477-af8a59fd928a",
+      "to": "c0b71f85-6b9e-4b70-82d7-ecca3b220db4",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "241685b8-827b-4a19-be03-aaa1da38f59a",
+      "to": "db953d44-a3c5-461a-960b-7a3fa4ffce28",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "db953d44-a3c5-461a-960b-7a3fa4ffce28",
+      "to": "2996e4b1-db83-405d-862e-5e9fc9b79969",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "62d4a398-58c0-45df-a477-af8a59fd928a",
+      "to": "3c8cee84-de7d-49b9-9503-d6e2a3d4d6de",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "f1234dde-6d27-43ea-9156-7446a9c73042",
+      "to": "55a9450c-503b-407d-92f1-19615d5fe2c5",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "7debfc70-3e27-44d8-92d3-8c7ababb65ac",
+      "to": "d88ca2dd-17d7-4247-b0c8-25a60a37becd",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "a8ba5f00-4d1e-493a-83ec-0f9f665cad8d",
+      "to": "7c614aa4-4491-4766-a93f-980832105101",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "21834e64-d351-499c-8f0a-34863febdbaf",
+      "to": "8a557dd0-20ae-4fb6-b4c8-b253167b5484",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "f500bd7f-0ebf-45f5-9bfc-6d043466a240",
+      "to": "71320d47-4b13-4c03-b1cb-96e48f1ba139",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "71320d47-4b13-4c03-b1cb-96e48f1ba139",
+      "to": "ef6c5b33-2472-42d0-8998-04442455832e",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "4f435a6b-575c-4852-8c3c-abb7d2b39753",
+      "to": "1b6ae8d4-dc14-4910-ba7b-4cb0a40b8fe5",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "1b6ae8d4-dc14-4910-ba7b-4cb0a40b8fe5",
+      "to": "dfe49a32-8ea8-4dea-b8e6-d5dd1302c2a6",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "ef35cbd8-b73e-4d21-b064-14d878993eec",
+      "to": "cd0c4619-4f53-443f-806b-d00ff56390f5",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "cd0c4619-4f53-443f-806b-d00ff56390f5",
+      "to": "522e06a3-7993-4662-8550-8af2c93a65fb",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "b3875e40-c8d9-4850-a065-1b4e1f460dcd",
+      "to": "7e444b89-0e89-49c6-bae0-2dafaaead4ee",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "7e444b89-0e89-49c6-bae0-2dafaaead4ee",
+      "to": "826cd558-ea61-46a2-9e7a-b8b93fb61f74",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "62d4a398-58c0-45df-a477-af8a59fd928a",
+      "to": "9557b61c-19f5-4bfd-bc8c-879ee2bb3d5a",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "9557b61c-19f5-4bfd-bc8c-879ee2bb3d5a",
+      "to": "f1234dde-6d27-43ea-9156-7446a9c73042",
+      "weight": 1,
+      "status": "open"
+    },
+    {
+      "from": "9557b61c-19f5-4bfd-bc8c-879ee2bb3d5a",
+      "to": "cdae2d87-4140-4550-9af1-6e2d9e017e15",
+      "weight": 1,
+      "status": "open"
+    }
   ],
   "settings": {
     "showGrid": true,
     "snapToGrid": true,
-    "pathAlgorithm": "A*"
+    "pathAlgorithm": "A"
   }
 }
